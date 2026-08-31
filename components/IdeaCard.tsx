@@ -19,7 +19,7 @@ export function IdeaCard({ idea }: { idea: Idea }) {
         <h3>{idea.title}</h3>
         <p>{idea.description}</p>
       </div>
-      <VoteButton ideaId={idea.id} initialVotes={idea.votes} ideaTitle={idea.title} />
+      <VoteButton initialVotes={idea.votes} ideaTitle={idea.title} />
     </article>
   );
 }
