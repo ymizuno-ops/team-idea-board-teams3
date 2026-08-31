@@ -255,6 +255,39 @@ main {
   font-size: 13px;
 }
 
+.category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.filter-chip {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink-soft);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.filter-chip:hover {
+  border-color: var(--blue);
+  color: var(--ink);
+}
+
+.filter-chip-active {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #ffffff;
+}
+
 .idea-list {
   display: flex;
   flex-direction: column;
