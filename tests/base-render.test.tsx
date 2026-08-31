@@ -12,7 +12,11 @@ describe("スターターアプリ", () => {
     expect(screen.getByLabelText("会議メモを同じ形式で残したいの投票数は8票です")).toBeTruthy();
     expect(screen.getByLabelText("問い合わせの引き継ぎ漏れを減らしたいの投票数は12票です")).toBeTruthy();
     expect(screen.getByLabelText("集中時間をチームで共有したいの投票数は5票です")).toBeTruthy();
-    expect(screen.queryByRole("button")).toBeNull();
+    // カテゴリ絞り込みボタン（すべて + 3カテゴリ）のみが存在する状態
+    expect(screen.getAllByRole("button")).toHaveLength(4);
+    expect(screen.getByRole("button", { name: "すべて" }).getAttribute("aria-pressed")).toBe(
+      "true",
+    );
     expect(screen.queryByRole("textbox")).toBeNull();
     expect(screen.queryByText(/Ticket [A-D]/)).toBeNull();
   });
